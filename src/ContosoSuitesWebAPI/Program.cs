@@ -118,7 +118,7 @@ app.MapPost("/Chat", async Task<string> (HttpRequest request) =>
      var chatCompletionService = kernel.GetRequiredService<IChatCompletionService>();
      var executionSettings = new OpenAIPromptExecutionSettings
      {
-         ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
+        ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions
      };
      var response = await chatCompletionService.GetChatMessageContentAsync(message.ToString(), executionSettings, kernel);
      return response?.Content!;
