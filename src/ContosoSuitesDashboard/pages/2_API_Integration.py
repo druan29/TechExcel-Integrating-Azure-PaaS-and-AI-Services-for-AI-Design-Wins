@@ -21,7 +21,7 @@ def get_hotel_bookings(hotel_id):
 def invoke_chat_endpoint(question):
     """Invoke the chat endpoint with the specified question."""
     api_endpoint = st.secrets["api"]["endpoint"]
-    response = requests.post(f"{api_endpoint}/Chat", data={"message": question}, timeout=10)
+    response = requests.post(f"{api_endpoint}/Chat", data={"message": question}, timeout=100)
     return response
 
 def main():
